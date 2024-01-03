@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@500&display=swap');
+body {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0f0616;
+    color: #fff;
+    font-family: 'Bebas Neue', sans-serif;
+    user-select: none;
+}
+.main-container{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+.neon-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+}
+
+.team-score {
+    margin: 0 10px;
+    padding: 10px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 1);
+}
+.team-name{
+    margin: 0 10px;
+    padding: 10px;
+
+    text-align: center;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 1);
+}
+#avatar {
+     /* Ajusta el tamaño de acuerdo a tus necesidades */
+    height: 40vh; /* Ajusta el tamaño de acuerdo a tus necesidades */
+    border-radius: 50%;
+    margin-top: 20px;
+    box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5) ;
+}
+#score {
+    font-size: 7em; /* Ajusta el tamaño de acuerdo a tus necesidades */
+    margin-top: 20px;
+    color: bisque; /* Cambia el color según tus preferencias */
+   
+    text-align: center;
+}
+.avatarContainer h1{
+    font-size: 3em;
+    text-align: center;
+    color: lightcyan;
+}
+.avatarContainer p{
+    font-size: 2em;
+    text-align: center;
+    color: whitesmoke;
+}
+.avatarContainer{
+   
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 6px;
+}
+.presentationName{
+    display: flex;
+    flex-direction: 20px;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    height: 10vh;
+    text-align: center;
+    justify-content: center;
+}
+.presentationName span{
+    font-size: 3em;
+    text-align: center;
+    color: aqua;
+}
+.presentationName div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+.avatarContainer h2{
+    font-size: 2em;
+    color: violet;
+}
+@media screen  and (max-width:1000px){
+    .presentationName span{
+        font-size: 2.3em;
+    }
+    .presentationName h1{
+        font-size: 2.3em;
+    }
+}
