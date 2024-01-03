@@ -6,7 +6,7 @@ const Jugadores = () => {
    
   const jugadores = {
     "GVM13026":{ nombre: "Guilmer", apellido: "Valencia Montes", puntos: 3.9,url:"https://i.ibb.co/DLv7Rzh/cr7.png" , desc:"Programador en Python - desarrollador de Software",team:"club de cr7" ,updated:'03-01-2024 00:00:00'},
-    "JHSB13231":{ nombre: "Jhon Hilton", apellido: "Sejas Bravo", puntos: 8,url:"https://i.ibb.co/HhgdS6p/taekwondo.png", desc:"Programador en Python - desarrollador de Software",team:"tae kwon do club",updated:'03-01-2024 00:00:00' },
+    "JHSB13231":{ nombre: "Jhon H", apellido: "Sejas B", puntos: 8,url:"https://i.ibb.co/HhgdS6p/taekwondo.png", desc:"Programador en Python - desarrollador de Software",team:"tae kwon do club",updated:'03-01-2024 00:00:00' },
   };
   const { idPlayer } = useParams();
   const [detailsTitle] =useTypewriter({

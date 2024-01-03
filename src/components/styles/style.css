@@ -117,3 +117,11 @@ body {
         font-size: 2.3em;
     }
 }
+@media screen  and (max-width:500px){
+    .presentationName span{
+        font-size: 1.9em;
+    }
+    .presentationName h1{
+        font-size: 1.9em;
+    }
+}
