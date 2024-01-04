@@ -54,15 +54,18 @@ body {
 #avatar {
      /* Ajusta el tamaño de acuerdo a tus necesidades */
     height: 40vh; /* Ajusta el tamaño de acuerdo a tus necesidades */
+    width: 40vh;
     border-radius: 50%;
     margin-top: 20px;
     box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5) ;
+    object-fit: cover;
+
 }
 #score {
     font-size: 7em; /* Ajusta el tamaño de acuerdo a tus necesidades */
     margin-top: 20px;
     color: bisque; /* Cambia el color según tus preferencias */
-   
+   object-fit: cover;
     text-align: center;
 }
 .avatarContainer h1{
