@@ -1,45 +1,56 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import {Cursor,useTypewriter} from 'react-simple-typewriter'
+import { Cursor, useTypewriter } from "react-simple-typewriter";
+import { useEffect, useState } from "react";
 import "./styles/style.css";
-const Jugadores = () => {
-    
 
-  const jugadores = {
-    "GVM13026":{ nombre: "Guilmer", apellido: "Valencia Montes", puntos: 13.9,url:"https://i.ibb.co/DLv7Rzh/cr7.png" , desc:"Programador en Python - desarrollador de Software",team:"club de cr7" ,updated:'03-01-2024 00:00:00'},
-    "JHSB13231":{ nombre: "Jhon Hilton", apellido: "Sejas B", puntos: 8,url:"https://i.ibb.co/Kjp4rG9/taek.png", desc:"Programador en Python - desarrollador de Software",team:"tae kwon do club",updated:'03-01-2024 00:00:00' },
-    "CMEG10235":{ nombre: "Ezequiel Gustavo", apellido: "Colque M", puntos: 2,url:"https://i.ibb.co/sKd7cHM/serbero.jpg", desc:"Programador - Programación Visual",team:"serbero",updated:'04-01-2024 16:54:00' }
-  };
+const Jugadores = () => {
+  const [alumno, setAlumno] = useState([]);
+  const [loading, setLoading] = useState(true);
   const { idPlayer } = useParams();
-  const [detailsTitle] =useTypewriter({
-    words:[jugadores[idPlayer]["nombre"]+" "+jugadores[idPlayer]["apellido"]],
-    loop:{},
-    typeSpeed:80,
-    deleteSpeed:30
-  })
+  useEffect(() => {
+    fetch(`https://agulujan41.pythonanywhere.com/api/students/${idPlayer}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setAlumno(data[0]);
+        setLoading(false);
+        return;
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  });
+
+  const [detailsTitle] = useTypewriter({
+    words: [alumno["nombre"] + " " + alumno["apellido"]],
+    loop: {},
+    typeSpeed: 40,
+    deleteSpeed: 10,
+  });
 
   return (
     <>
-      <div className="avatarContainer">
-        <div className="presentationName">
-            <span>Jugador</span>
-            <div>
-            <h1>{detailsTitle}</h1>
-            <Cursor/>
+      {loading ? (
+        <>CARGANDO</>
+      ) : (
+        <>
+          <div className="avatarContainer">
+            <div className="presentationName">
+              <span>Jugador</span>
+              <div>
+                <h1>{detailsTitle}</h1>
+                <Cursor />
+              </div>
             </div>
-           
-        </div>
-        
-        <p>{jugadores[idPlayer]["desc"]}</p>
-        <img
-          id="avatar"
-          src={jugadores[idPlayer]["url"]}
-          alt="Avatar del jugador"
-        />
-        <h2>Team: {jugadores[idPlayer]["team"]}</h2>
-        <div id="score">{jugadores[idPlayer]["puntos"]} puntos</div>
-        <h3>Actualizado: {jugadores[idPlayer]["updated"]}</h3>
-      </div>
+
+            <p>{alumno["desc"]}</p>
+            <img id="avatar" src={alumno["url"]} alt="Avatar del jugador" />
+            <h2>Team: {alumno["team"]}</h2>
+            <div id="score">{alumno["puntos"]} puntos</div>
+            <h3>Actualizado: {alumno["updated"]}</h3>
+          </div>
+        </>
+      )}
     </>
   );
 };
