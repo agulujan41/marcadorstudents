@@ -1,23 +1,34 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams,useNavigate } from "react-router-dom";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import { useEffect, useState } from "react";
 import "./styles/style.css";
 
 const Jugadores = () => {
+  const navigate = useNavigate();
+  const goSomethingBad = ()=>{
+    navigate("/error")
+  };
   const [alumno, setAlumno] = useState([]);
+  const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
   const { idPlayer } = useParams();
   useEffect(() => {
     fetch(`https://agulujan41.pythonanywhere.com/api/students/${idPlayer}`)
       .then((res) => res.json())
       .then((data) => {
+        if (data.length===0){
+          setError(true);
+          goSomethingBad();
+        }
         setAlumno(data[0]);
         setLoading(false);
+        
         return;
       })
       .catch((err) => {
         console.log(err.message);
+        setError(true);
       });
   });
 
@@ -27,13 +38,13 @@ const Jugadores = () => {
     typeSpeed: 40,
     deleteSpeed: 10,
   });
-
+  
   return (
     <>
       {loading ? (
-        <>CARGANDO</>
-      ) : (
-        <>
+        <><div className="loadingContainer"><span >CARGANDO</span></div></>
+      ) : (error)?(<div className="errorContainer"><span >UPS ALGO ANDUVO MAL</span></div>):(
+        
           <div className="avatarContainer">
             <div className="presentationName">
               <span>Jugador</span>
@@ -49,7 +60,7 @@ const Jugadores = () => {
             <div id="score">{alumno["puntos"]} puntos</div>
             <h3>Actualizado: {alumno["updated"]}</h3>
           </div>
-        </>
+        
       )}
     </>
   );
