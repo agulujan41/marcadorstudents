@@ -44,7 +44,7 @@ const Jugadores = () => {
       {loading ? (
         <><div className="loadingContainer"><span >CARGANDO</span></div></>
       ) : (error)?(<div className="errorContainer"><span >UPS ALGO ANDUVO MAL</span></div>):(
-        
+          
           <div className="avatarContainer">
             <div className="presentationName">
               <span>Jugador</span>

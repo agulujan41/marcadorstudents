@@ -1,0 +1,41 @@
+.posiciones{
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.posiciones h1{
+    font-size: 3em;
+    text-align: center;
+}
+.grillaEquipos{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+}
+.equipo {
+    display: flex;
+    flex-direction: row;
+    gap:20px;
+    align-items: center;
+    border-bottom: 1px solid purple;
+    padding: 2px;
+
+}
+.equipo h2{
+    color: white;
+    font: 2em;
+    width: 200px;
+
+}
+.equipo h3{
+    color: white;
+    font: 3em;
+    width: 100px;
+}
+.equipo img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
