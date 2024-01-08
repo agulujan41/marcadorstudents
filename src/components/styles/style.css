@@ -131,3 +131,8 @@ body {
         font-size: 1.9em;
     }
 }
+@media screen  and (min-width:300px){
+    body{
+        min-width: 300px;
+    }
+}

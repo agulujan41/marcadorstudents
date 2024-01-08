@@ -14,15 +14,16 @@
 .navbar .presentationNavbar{
     height: 10vh;
 }
+
 .navbar nav{
-    margin-right: 20px;
+    margin-right: 40px;
     width: 100%;
 }
 .navbar ul{
     z-index: 120;
     display:flex;
     flex-direction: row;
-    gap: 30px;
+    gap: 50px;
     align-self: flex-end;
     
 }
@@ -31,11 +32,11 @@
 }
 .navbar a{
     text-decoration: none;
-    font-size: 1.7em;
+    font-size: 2em;
     color: white;
 }
 .menu_icon_button{
-    display:none;
+    display: none !important;;
     padding: 5px;
     height: 30px;
     width: 30px;
@@ -46,13 +47,15 @@
     border-radius: 2px;
     border: 1px solid violet;
 }
-
+.optionsNavbar{
+    display: flex ;
+}
 @media screen and (max-width:1000px) {
     .navbar .optionsNavbar{
         display: none;
     }
     .menu_icon_button{
-        display:flex;
+        display:flex !important;;
         
     }
 
