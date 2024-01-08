@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
+
 const Posiciones = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -34,11 +35,13 @@ const Posiciones = () => {
           <span>UPS ALGO ANDUVO MAL</span>
         </div>
       ) : (
+        
         <div className="posiciones">
           <h1>Posiciones</h1>
           <div className="grillaEquipos">
             {data?.map((element) => (<>
               <div className="equipo">
+                <h3>{""+((data.indexOf(element))+1)}</h3>
                 <img src={element["url"]} alt="" />
                 <h2>{element["team"]}</h2>
                 <h3>{element["puntos"]} puntos</h3>
