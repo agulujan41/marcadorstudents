@@ -3,8 +3,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import { useEffect, useState } from "react";
 import "./styles/style.css";
-import Navbar from "./Navbar";
-import SpaceBlank from "./utils/SpaceBlank";
+
+
 
 const Jugadores = () => {
   const navigate = useNavigate();
@@ -43,7 +43,7 @@ const Jugadores = () => {
 
   return (
     <>
-      <Navbar />
+  
 
       {loading ? (
         <>
@@ -57,7 +57,7 @@ const Jugadores = () => {
         </div>
       ) : (
         <>
-          <SpaceBlank />
+          <div className="espacio"></div>
           <div className="avatarContainer">
             <div className="presentationName">
               <span>Jugador</span>

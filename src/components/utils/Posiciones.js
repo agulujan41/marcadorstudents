@@ -41,10 +41,10 @@ const Posiciones = () => {
           <div className="grillaEquipos">
             {data?.map((element,id) => (<>
               <div className="equipo" key={id}>
-                <h4 key={id}>{""+((data.indexOf(element))+1)}</h4>
-                <img src={element["url"]} alt="" key={id} />
-                <h2 key={id}>{element["team"]}</h2>
-                <h3 key={id}>{element["puntos"]} puntos</h3>
+                <h4 >{""+((data.indexOf(element))+1)}</h4>
+                <img src={element["url"]} alt="" />
+                <h2>{element["team"]}</h2>
+                <h3>{element["puntos"]} puntos</h3>
               </div>
             
             </>
