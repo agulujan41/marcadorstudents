@@ -4,7 +4,7 @@ import Principal from "./components/Principal";
 import Jugadores from "./components/Jugadores";
 import Error from "./components/Error";
 import Error404 from "./components/Error404";
-import "./components/js/bootstrap.bundle.min.js"
+
 
 function App() {
   return (
