@@ -24,6 +24,9 @@ const Posiciones = () => {
   });
   return (
     <>
+      <section id="positionSection">
+
+      
       {loading ? (
         <>
           <div className="loadingContainer">
@@ -44,7 +47,7 @@ const Posiciones = () => {
                 <h4 >{""+((data.indexOf(element))+1)}</h4>
                 <img src={element["url"]} alt="" />
                 <h2>{element["team"]}</h2>
-                <h3>{element["puntos"]} puntos</h3>
+                <h3>{element["puntos"]} XP</h3>
               </div>
             
             </>
@@ -52,6 +55,7 @@ const Posiciones = () => {
           </div>
         </div>
       )}
+      </section>
     </>
   );
 };

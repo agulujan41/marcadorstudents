@@ -1,13 +1,27 @@
+#positionSection{
+    margin: 15%;
+    padding:2%;
+}
+@media screen and (orientation:landscape) , (max-width:1000px) {
+    #positionSection{
+        margin: 2%;
+    }
+}
 .posiciones{
     display: flex;
     flex-direction: column;
     padding-top: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 30px;   
+    overflow-y: hidden;
+    background-color: transparent;
     
 }
 .posiciones h1{
+    margin-top: 15px;
+    margin-bottom: 15px;
     font-size: 3em;
     text-align: center;
+    color: aqua;
 }
 .grillaEquipos{
     display: flex;
